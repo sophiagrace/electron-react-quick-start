@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, IndexRoute } from 'react-router-dom';
 
+import Container from './Container';
 
 /* This can check if your electron app can communicate with your backend */
 // fetch('http://localhost:3000')
@@ -10,5 +11,6 @@ import { HashRouter, Route, IndexRoute } from 'react-router-dom';
 // .catch(err => {throw err})
 
 
-ReactDOM.render(<Time/>,
+ReactDOM.render(
+  <Container />,
    document.getElementById('root'));
