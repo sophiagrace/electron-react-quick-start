@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, Route, IndexRoute } from 'react-router-dom';
 
 import Container from './Container';
 

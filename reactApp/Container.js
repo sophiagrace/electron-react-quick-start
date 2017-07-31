@@ -13,18 +13,21 @@ import WidgetContainer from './components/WidgetContainer';
      this.isMirrorActive = this.isMirrorActive.bind(this);
    }
 
-   isMirrorActive () => {
+   isMirrorActive() {
      // function passed down to voice component to determine if
      // mirror is standby or active
+     return
    }
 
    render () {
-
+       return(
+           <WidgetContainer />
+       )
      // in future, have either just header Component
 
      // or the widgetContainer, header, and voice components
 
-     <WidgetContainer />
+
    }
  }
 
