@@ -1,31 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 
 // import all different widgets
 // in this file, control which widgets show
 import Time from './Time';
+import Weather from './Weather';
 
- class WidgetContainer extends React.Component {
-   constructor(props) {
-     super(props);
-     this.state = {
+class WidgetContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-     }
-   }
+    };
+  }
 
-   determineThreeWidgets() {
+  determineThreeWidgets() {
      // function to determine which widgets show
-   }
+  }
 
-   render () {
+  render () {
      // in future, only show three components,
      // for now, test out widgets here!
-     return(
+    return(
+      <div className='header'>
          <Time />
-     )
+         <Weather />
+      </div>
+    );
 
-   }
+  }
  }
 
- export default WidgetContainer;
+export default WidgetContainer;
