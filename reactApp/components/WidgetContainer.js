@@ -1,9 +1,8 @@
 import React from 'react';
-
+import Header from './Header';
 // import all different widgets
 // in this file, control which widgets show
-import Time from './Time';
-import Weather from './Weather';
+
 
 class WidgetContainer extends React.Component {
   constructor(props) {
@@ -21,10 +20,7 @@ class WidgetContainer extends React.Component {
      // in future, only show three components,
      // for now, test out widgets here!
     return(
-      <div className='header'>
-         <Time />
-         <Weather />
-      </div>
+      <Header />
     );
 
   }

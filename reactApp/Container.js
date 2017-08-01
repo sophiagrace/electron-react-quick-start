@@ -23,9 +23,7 @@ class Container extends React.Component {
         <WidgetContainer />
     );
      // in future, have either just header Component
-
      // or the widgetContainer, header, and voice components
-
 
   }
 }

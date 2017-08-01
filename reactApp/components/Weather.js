@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import weatherIcon from '../helperFunctions/weatherIcon.js';
 
 class Weather extends React.Component {
   constructor() {
     super();
     this.state = {
       interval: () => '',
-      weather: 'loading...',
     };
   }
   componentDidMount() {
@@ -18,11 +18,12 @@ class Weather extends React.Component {
           description: resp.data.weather[0].description,
           min: resp.data.main.temp_min-273.15,
           max: resp.data.main.temp_max-273.15,
-          current: (resp.data.main.temp-273.15).toFixed(0)
+          current: (resp.data.main.temp-273.15).toFixed(0),
+          icon: resp.data.weather[0].icon
         });
-        console.log(this.state.weather);
+        console.log(this.state.icon);
       });
-    }, 1000)
+    }, 100000)
     });
   }
   componentWillUnmount() {
@@ -30,8 +31,10 @@ class Weather extends React.Component {
     console.log('clearing');
   }
   render() {
+    const icon = weatherIcon(this.state.icon);
     return (
       <div className='weather'>
+      <img src={icon} height="75" width="75"></img>
         <div className='current'>
           currently {this.state.current}˚C
         </div>
