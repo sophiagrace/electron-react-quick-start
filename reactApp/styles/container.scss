@@ -4,7 +4,8 @@
     justify-content: center;
 }
 .isActiveTime {
-    font-family: 'Alegreya';
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
     font-size: 40px;
     color: #fff;
     margin: 0 !important;
@@ -13,8 +14,29 @@
     justify-content: center;
 }
 .isStandbyTime {
-    font-family: 'Alegreya';
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    color: #fff;
+    margin: 0 !important;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.isActiveWeather {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
     font-size: 40px;
+    color: #fff;
+    margin: 0 !important;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.isStandbyWeather {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    font-size: 35px;
     color: #fff;
     margin: 0 !important;
     text-align: center;
@@ -25,6 +47,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.standbyDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {

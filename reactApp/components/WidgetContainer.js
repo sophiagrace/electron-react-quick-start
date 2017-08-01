@@ -23,9 +23,9 @@ import Weather from './Weather';
      // in future, only show three components,
      // for now, test out widgets here!
      return(
-         <div>
+         <div className="standbyDiv">
              <Time timeState={this.props.active}/>
-             <Weather weathState={this.props.active}/>
+             <Weather weatherState={this.props.active}/>
         </div>
      )
 

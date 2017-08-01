@@ -2,48 +2,48 @@ const weatherIcon = function(iconCode) {
   let icon;
   switch(iconCode) {
   case "01n":
-    icon = "../reactApp/views/icons/moon.png";
+    icon = "moon.png";
     break;
   case "01d":
-    icon = "../reactApp/views/icons/sun.png";
+    icon = "sun.png";
     break;
   case "02n":
-    icon = "../reactApp/views/icons/cloud.png";
+    icon = "cloud.png";
     break;
   case "02d":
-    icon = "../reactApp/views/icons/cloud-2.png";
+    icon = "cloud-2.png";
     break;
   case "03n":
   case "03d":
-    icon = "../reactApp/views/icons/cloud-1.png";
+    icon = "cloud-1.png";
     break;
   case "04n":
   case "04d":
-    icon = "../reactApp/views/icons/cloud-1.png";
+    icon = "cloud-1.png";
     break;
   case "09n":
   case "09d":
-    icon = "../reactApp/views/icons/rain-2.png";
+    icon = "rain-2.png";
     break;
   case "10d":
-    icon = "../reactApp/views/icons/rain.png";
+    icon = "rain.png";
     break;
   case "11n":
   case "11d":
-    icon = "../reactApp/views/icons/rain.png";
+    icon = "rain.png";
     break;
   case "13n":
   case "13d":
-    icon = "../reactApp/views/icons/snow.png";
+    icon = "snow.png";
     break;
   case "50n":
   case "50d":
-    icon = "../reactApp/views/icons/";
+    icon = "cloud-1.png";
     break;
   default:
-    icon = "../reactApp/views/icons/";
+    icon = "sun.png";
   }
-  return icon;
+  return "../reactApp/views/icons/" + icon;
 };
 
 export default weatherIcon;
