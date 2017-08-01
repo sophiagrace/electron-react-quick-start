@@ -7,7 +7,7 @@ import WidgetContainer from './components/WidgetContainer';
    constructor() {
      super();
      this.state = {
-       isActive: false
+       isActive: true
      }
 
      this.isMirrorActive = this.isMirrorActive.bind(this);

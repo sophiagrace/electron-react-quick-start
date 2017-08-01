@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 // import all different widgets
@@ -23,9 +24,14 @@ import Weather from './Weather';
      // in future, only show three components,
      // for now, test out widgets here!
      return(
-         <div className="standbyDiv">
-             <Time timeState={this.props.active}/>
-             <Weather weatherState={this.props.active}/>
+         <div className={this.props.isActive ? 'isActiveDiv' : 'isStandbyDiv'}>
+             <ReactCSSTransitionGroup transitionName = "example"
+               transitionAppear = {true} transitionAppearTimeout = {2000}
+               transitionEnter = {false} transitionLeave = {false}>
+
+               <Time timeState={this.props.isActive}/>
+               <Weather weatherState={this.props.isActive}/>
+            </ReactCSSTransitionGroup>
         </div>
      )
 
