@@ -15,10 +15,15 @@ class Time extends React.Component {
   componentDidMount() {
   //update time
     this.setState({ interval: setInterval(() => {
+      const min = (new Date).getMinutes();
+      const minutes = (min < 10) ? '0'+min : min;
+      const secs = (new Date).getSeconds();
+      const seconds = (secs < 10) ? '0'+secs : secs;
+
       this.setState({
         hours: new Date().getHours(),
-        minutes: new Date().getMinutes(),
-        seconds: new Date().getSeconds()
+        minutes: minutes,
+        seconds: seconds
       });
     }, 100)
     })
