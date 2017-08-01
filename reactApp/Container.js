@@ -21,7 +21,7 @@ import WidgetContainer from './components/WidgetContainer';
 
    render () {
        return(
-           <WidgetContainer className="card2"/>
+           <WidgetContainer isActive={this.state.isActive} className="card2"/>
        )
      // in future, have either just header Component
 

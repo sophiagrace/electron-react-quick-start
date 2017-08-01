@@ -1,94 +1,18 @@
-#container {
-  border: 2px solid #dddddd;
-  border-radius: 3px;
-  height: 1200px;
-  margin: 30px;
-  width: 80%;
-  padding: 70px;
-  font-family: 'Lato';
-  background-color: white;
-  font-size: 20px;
-  color: #4f4f4f;
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
-
-}
-
 #root {
     height: 100vh;
     display: flex;
     justify-content: center;
 }
-.align {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e0e0e0;
-  margin-top: 20px;
-  width: 100%;
+.isActiveTime {
+    font-family: 'Alegreya';
+    font-size: 40px;
+    color: #fff;
+    margin: 0 !important;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
-
-.alignSB {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.alignRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  margin-top: 20px;
-  width: 100%;
-}
-.spacer50 {
-  height: 50px;
-  width: 100%;
-}
-.alignRowC {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  width: 100%;
-}
-
-.alignCenter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.spacer {
-  width: 100%;
-  height: 30px;
-}
-
-.card {
-  width: 400px;
-  height: 500px;
-  border-radius: 3px;
-  background-color: #f7f7f2;
-  overflow: scroll;
-}
-.card2 {
-  width: 400px;
-  height: 500px;
-  border-radius: 3px;
-  background-color: #f7f7f2;
-  margin-left: 40px;
-  overflow: scroll;
-}
-.h1NoMargin {
-  font-family: 'Alegreya';
-  font-size: 30px;
-  color: #4f4f4f;
-  margin: 0 !important
-}
-
-.time {
+.isStandbyTime {
     font-family: 'Alegreya';
     font-size: 40px;
     color: #fff;
@@ -102,6 +26,7 @@
     justify-content: center;
     align-items: center;
 }
+
 h1 {
   font-family: 'Alegreya';
   font-size: 30px;

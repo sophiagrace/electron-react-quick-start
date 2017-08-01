@@ -3,8 +3,8 @@ import styles from '../styles/styles';
 import '../styles/container.scss';
 
 class Time extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       hours: new Date().getHours(),
       minutes: new Date().getMinutes(),
@@ -21,7 +21,7 @@ class Time extends React.Component {
         seconds: new Date().getSeconds()
       });
     }, 100)
-    });
+    })
   }
   componentWillUnmount() {
     clearInterval(this.state.interval);
@@ -30,7 +30,7 @@ class Time extends React.Component {
   render() {
     return (
     <div className="timeDiv">
-      <div className="time">
+      <div className={this.props.timeState ? 'isActiveTime' : 'isStandbyTime'}>
           {this.state.hours}:{this.state.minutes}:{this.state.seconds}
       </div>
      </div>
