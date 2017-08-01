@@ -13,7 +13,29 @@
     justify-content: center;
 }
 .isStandbyTime {
-    font-family: 'Alegreya';
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 50px;
+    color: #fff;
+    margin: 0 !important;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.standbyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.activeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.isActiveWeather {
+    font-family: 'Oswald';
     font-size: 40px;
     color: #fff;
     margin: 0 !important;
@@ -21,7 +43,17 @@
     align-items: center;
     justify-content: center;
 }
-.timeDiv {
+.isStandbyWeather {
+    font-family: 'Oswald';
+    font-weight: 200;
+    font-size: 25px;
+    color: #fff;
+    margin: 0 !important;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.weatherDiv {
     display: flex;
     justify-content: center;
     align-items: center;

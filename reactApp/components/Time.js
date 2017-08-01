@@ -29,11 +29,9 @@ class Time extends React.Component {
   }
   render() {
     return (
-    <div className="timeDiv">
       <div className={this.props.timeState ? 'isActiveTime' : 'isStandbyTime'}>
           {this.state.hours}:{this.state.minutes}:{this.state.seconds}
       </div>
-     </div>
     );
   }
 }

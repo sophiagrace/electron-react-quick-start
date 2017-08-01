@@ -33,16 +33,18 @@ class Weather extends React.Component {
   render() {
     const icon = weatherIcon(this.state.icon);
     return (
-      <div className='weather'>
-      <img src={icon} height="75" width="75"></img>
-        <div className='current'>
-          currently {this.state.current}˚C
-        </div>
-        <div className='description'>
-          {this.state.description}
-        </div>
-        <div className='min-max'>
-          {this.state.min}˚C  |  {this.state.max}˚C
+      <div className="weatherDiv">
+        <div className={this.props.timeState ? 'isActiveWeather' : 'isStandbyWeather'}>
+        <img src={icon} height="75" width="75"></img>
+          <div className='current'>
+            currently {this.state.current}˚C
+          </div>
+          <div className='description'>
+            {this.state.description}
+          </div>
+          <div className='min-max'>
+            L: {this.state.min}˚C  |  H: {this.state.max}˚C
+          </div>
         </div>
       </div>
     );
