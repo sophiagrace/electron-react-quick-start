@@ -1,6 +1,6 @@
 import React from 'react';
-// import styles from '../styles/styles';
-// import '../styles/container.scss';
+import styles from '../styles/styles';
+import '../styles/container.scss';
 
 class Time extends React.Component {
   constructor() {
@@ -29,9 +29,11 @@ class Time extends React.Component {
   }
   render() {
     return (
+    <div className="timeDiv">
       <div className="time">
           {this.state.hours}:{this.state.minutes}:{this.state.seconds}
       </div>
+     </div>
     );
   }
 }

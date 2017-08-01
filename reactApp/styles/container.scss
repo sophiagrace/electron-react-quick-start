@@ -1,17 +1,23 @@
-// #container {
-//   border: 2px solid #dddddd;
-//   border-radius: 3px;
-//   height: 1200px;
-//   margin: 30px;
-//   width: 80%;
-//   padding: 70px;
-//   font-family: 'Lato';
-//   background-color: white;
-//   font-size: 20px;
-//   color: #4f4f4f;
-//   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
-//
-// }
+#container {
+  border: 2px solid #dddddd;
+  border-radius: 3px;
+  height: 1200px;
+  margin: 30px;
+  width: 80%;
+  padding: 70px;
+  font-family: 'Lato';
+  background-color: white;
+  font-size: 20px;
+  color: #4f4f4f;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 .align {
   display: flex;
   justify-content: center;
@@ -84,9 +90,17 @@
 
 .time {
     font-family: 'Alegreya';
-    font-size: 600px;
-    color: #4f4f4f;
-    margin: 0 !important
+    font-size: 40px;
+    color: #fff;
+    margin: 0 !important;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.timeDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 h1 {
   font-family: 'Alegreya';

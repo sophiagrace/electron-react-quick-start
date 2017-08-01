@@ -21,7 +21,7 @@ import WidgetContainer from './components/WidgetContainer';
 
    render () {
        return(
-           <WidgetContainer />
+           <WidgetContainer className="card2"/>
        )
      // in future, have either just header Component
 
