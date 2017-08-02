@@ -25,16 +25,20 @@ import Radio from './Radio';
      // in future, only show three components,
      // for now, test out widgets here!
      return(
-         <div className={this.props.isActive ? 'isActiveDiv' : 'isStandbyDiv'}>
-             <Radio />
-             <ReactCSSTransitionGroup transitionName = "example"
-               transitionAppear = {true} transitionAppearTimeout = {2000}
-               transitionEnter = {false} transitionLeave = {false}>
+        <div>
+             <div className={this.props.isActive ? 'isActiveDiv' : 'isStandbyDiv'}>
+                 <ReactCSSTransitionGroup transitionName = "example"
+                   transitionAppear = {true} transitionAppearTimeout = {2000}
+                   transitionEnter = {false} transitionLeave = {false}>
 
-               <Time timeState={this.props.isActive}/>
-               <Weather weatherState={this.props.isActive}/>
-            </ReactCSSTransitionGroup>
-        </div>
+                   <Time timeState={this.props.isActive}/>
+                   <Weather weatherState={this.props.isActive}/>
+                </ReactCSSTransitionGroup>
+            </div>
+            <div className={this.props.isActive ? 'widgetsActive' : 'widgetsStandby'}>
+                <Radio />
+            </div>
+      </div>
      )
 
    }
