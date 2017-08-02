@@ -18,7 +18,6 @@ class Player extends React.Component {
         </div>
         <div className="player__main">
           <button onClick={this.props.togglePlay}><i className={playPauseClass}></i></button>
-          <button onClick={this.props.stop}><i className="fa fa-stop"></i></button>
           <button onClick={this.props.random}><i className="fa fa-random"></i></button>
         </div>
         <div className="player__forward">

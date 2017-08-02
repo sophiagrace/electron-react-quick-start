@@ -28,6 +28,7 @@ class Search extends React.Component{
     return (
       <div className="search">
         <Autocomplete
+        placeholder='Search for a track'    
          ref="autocomplete"
          inputProps={{title: "Title"}}
          value={this.props.autoCompleteValue}

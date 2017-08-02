@@ -26,7 +26,16 @@
     flex-direction: column;
     min-width: 30%;
     padding-left: 15px;
+
+    //AMANDA CHANGE
+    width: 28vw;
 }
+
+//AMANDA CHANGE
+.isActiveDiv span {
+    width: 100%;
+}
+
 .isActiveDescription {
     font-size: 50%;
 }
@@ -39,6 +48,9 @@
     font-size: 60px;
     color: #fff;
     margin: 0 !important;
+
+    //AMANDA CHANGE
+    width: 100%;
     // text-align: center;
     // align-items: center;
     // justify-content: center;
@@ -60,6 +72,10 @@
     color: #fff;
     margin: 0 !important;
     padding-bottom: 10%;
+
+    //AMANDA CHANGE
+    // padding-left: 2%;
+
     // text-align: center;
     // align-items: center;
     // justify-content: center;
@@ -87,6 +103,19 @@
     align-items: center;
 }
 
+.widgetsActive {
+    float: right;
+    height: 100%;
+    width: 33%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.widgetsStandby {
+    display: none;
+}
+
 /* RADIO STYLING */
 *, *:before, *:after {
   box-sizing: border-box;
@@ -97,9 +126,14 @@ body{
   margin: 0;
   font-family: 'Exo 2', sans-serif;
 }
+.controlDiv {
 
+}
 .scotch_music{
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .search div, .search input {
@@ -115,15 +149,17 @@ body{
 }
 
 .details h3{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
   text-align: center;
-  padding: 50px 10px;
+  padding: 10px 10px 16% 10px;
   margin: 0;
   color: white;
 }
 
 .player{
   text-align: center;
-  margin-top: 60px;
+  margin-top: 5px;
 }
 
 .player div{
@@ -135,12 +171,12 @@ body{
 
 .player .player__backward button, .player .player__forward button{
   background: transparent;
-  border: 1px solid rgb(243, 139, 114);
-  color: rgb(243, 139, 114);
-  width: 75px;
-  height: 75px;
+  border: 0px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  width: 25%;
+  height: 25%;
   border-radius: 100%;
-  font-size: 35px;
+  font-size: 100%;
   outline: none;
 }
 
@@ -154,26 +190,27 @@ body{
 
 .player .player__main button:hover, .player .player__backward button:hover, .player .player__forward button:hover{
   color: rgba(243, 139, 114, 0.7);
-  border: 1px solid rgba(243, 139, 114, 0.7);
+  border: 0px solid rgba(243, 139, 114, 0.7);
 }
 
 .player .player__main {
-  border: 1px solid rgb(243, 139, 114);
+  border: 0px solid rgb(255, 255, 255);
 }
 
 .player .player__main button {
-  color: rgb(243, 139, 114);
+  color: rgb(255, 255, 255);
   background: transparent;
-  width: 75px;
-  height: 75px;
+  width: 25%;
+  height: 25%;
   border: none;
-  font-size: 35px;
+  font-size: 100%;
   outline: none;
+  padding-right: 15px;
 }
 
 .progress{
   text-align: center;
-  margin-top: 100px;
+  margin-top: 10px;
     color: white;
 }
 
@@ -182,7 +219,7 @@ body{
   -webkit-appearance: none;
    appearance: none;
 
-  width: 390px;
+  width: 50%;
   height: 20px;
   margin-left: 4px;
   margin-right: 4px;

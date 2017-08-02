@@ -127,11 +127,11 @@ class AppContainer extends React.Component {
 
   render () {
     const scotchStyle = {
-      width: '500px',
-      height: '500px',
+      width: '100%',
+      height: '33%',
       backgroundImage: `linear-gradient(
       rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
+      rgba(0, 0, 0, 0)
     ),   url(${this.xlArtwork(this.state.track.artwork_url)})`
     }
     return (
@@ -150,18 +150,19 @@ class AppContainer extends React.Component {
            onPlaying={this.handleSongPlaying.bind(this)}
            playFromPosition={this.state.playFromPosition}
            onFinishedPlaying={this.handleSongFinished.bind(this)}/>
-        <Player
-          togglePlay={this.togglePlay.bind(this)}
-          stop={this.stop.bind(this)}
-          playStatus={this.state.playStatus}
-          forward={this.forward.bind(this)}
-          backward={this.backward.bind(this)}
-          random={this.randomTrack.bind(this)}/>
-        <Progress
-          elapsed={this.state.elapsed}
-          total={this.state.total}
-          position={this.state.position}/>
-        <Footer />
+       <div className="controlDiv">
+           <Progress
+             elapsed={this.state.elapsed}
+             total={this.state.total}
+             position={this.state.position}/>
+            <Player
+              togglePlay={this.togglePlay.bind(this)}
+              playStatus={this.state.playStatus}
+              forward={this.forward.bind(this)}
+              backward={this.backward.bind(this)}
+              random={this.randomTrack.bind(this)}/>
+      </div>
+
       </div>
     );
   }
