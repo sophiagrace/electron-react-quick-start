@@ -7,6 +7,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // in this file, control which widgets show
 import Time from './Time';
 import Weather from './Weather';
+import Radio from './Radio';
 
  class WidgetContainer extends React.Component {
    constructor(props) {
@@ -24,15 +25,20 @@ import Weather from './Weather';
      // in future, only show three components,
      // for now, test out widgets here!
      return(
-         <div className={this.props.isActive ? 'isActiveDiv' : 'isStandbyDiv'}>
-             <ReactCSSTransitionGroup transitionName = "example"
-               transitionAppear = {true} transitionAppearTimeout = {2000}
-               transitionEnter = {false} transitionLeave = {false}>
+        <div>
+             <div className={this.props.isActive ? 'isActiveDiv' : 'isStandbyDiv'}>
+                 <ReactCSSTransitionGroup transitionName = "example"
+                   transitionAppear = {true} transitionAppearTimeout = {2000}
+                   transitionEnter = {false} transitionLeave = {false}>
 
-               <Time timeState={this.props.isActive}/>
-               <Weather weatherState={this.props.isActive}/>
-            </ReactCSSTransitionGroup>
-        </div>
+                   <Time timeState={this.props.isActive}/>
+                   <Weather weatherState={this.props.isActive}/>
+                </ReactCSSTransitionGroup>
+            </div>
+            <div className={this.props.isActive ? 'widgetsActive' : 'widgetsStandby'}>
+                <Radio />
+            </div>
+      </div>
      )
 
    }
