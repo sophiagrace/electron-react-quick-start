@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-
 // import all different widgets
 // in this file, control which widgets show
 import Time from './Time';

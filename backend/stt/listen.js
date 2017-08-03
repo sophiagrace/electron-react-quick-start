@@ -45,10 +45,10 @@ function streamingMicRecognize (/*encoding, sampleRateHertz, languageCode*/) {
         //STOP AT A SILENCE
         console.log('DATA:', data.results);
         if (data.results[0].isFinal) {
-          console.log('stopped listening');
           record.stop();
+          console.log('stopped listening');
         }
-        
+
         return returnScript
     });
 
@@ -68,6 +68,52 @@ function streamingMicRecognize (/*encoding, sampleRateHertz, languageCode*/) {
 
   console.log('Listening, press Ctrl+C to stop.');
   // [END speech_streaming_mic_recognize]
+
+
+
+  /* TO BE PUT IN:
+  //AMANDA CHANGE - STOP AT A SILENCE
+        process.stdout.write(
+          (data.results[0] && data.results[0].alternatives[0])
+            ? `Transcription: ${data.results[0].alternatives[0].transcript}\n`
+            : `\n\nReached transcription time limit, press Ctrl+C\n`)
+
+        console.log('DATA:', data.results);
+        if (data.results[0].isFinal) {
+          console.log('stopped');
+          record.stop();
+          stopSpeaking = true;
+          return;
+        }
+
+    });
+
+  // Start recording and send the microphone input to the Speech API
+  if (!stopSpeaking) {
+    console.log('reaches here');
+    record
+    .start({
+      sampleRateHertz: sampleRateHertz,
+      threshold: 0,
+      //AMANDA CHANGE
+      thresholdEnd: 0.01,
+      // Other options, see https://www.npmjs.com/package/node-record-lpcm16#options
+      verbose: false,
+      recordProgram: 'rec', // Try also "arecord" or "sox"
+      silence: '0.5'
+    })
+    .on('error', console.error)
+    .pipe(recognizeStream);
+  }
+
+
+    // //AMANDA CHANGE - STOP RECORDING AFTER 3 SECONDS
+    // setTimeout(function () {
+    //   record.stop()
+    // }, 5000)
+
+  console.log('Listening, press Ctrl+C to stop.');
+  */
 }
 
 module.exports = { streamingMicRecognize };
