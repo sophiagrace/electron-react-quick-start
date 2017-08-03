@@ -9,7 +9,7 @@ class News extends React.Component {
     super(props);
     this.state = {
       allSources: [],
-      currentSource: '',
+      currentSource: {},
       currentArticles: []
     };
   }
@@ -27,7 +27,7 @@ class News extends React.Component {
       .catch(console.log);
 
 
-      this.pinArticle("Trump 'pressed Mexico");
+      // this.pinArticle("Trump 'pressed Mexico");
   }
 
   // function for user to select specific news source
@@ -40,9 +40,7 @@ class News extends React.Component {
       }
     });
 
-    const filter = 'latest'; // can be 'top' or 'popular'
-
-    return axios.get(`https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=${NEWS_API_KEY}`)
+    return axios.get(`https://newsapi.org/v1/articles?source=${this.state.currentSource.id}&apiKey=${NEWS_API_KEY}`)
       .then(resp => {
         console.log('RESP', resp);
         this.setState({currentArticles: [...resp.data.articles]});
