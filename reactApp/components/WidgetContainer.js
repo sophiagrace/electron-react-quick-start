@@ -8,6 +8,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Time from './Time';
 import Weather from './Weather';
 import Radio from './Radio';
+import News from './News';
 
  class WidgetContainer extends React.Component {
    constructor(props) {
@@ -33,6 +34,7 @@ import Radio from './Radio';
 
                    <Time timeState={this.props.isActive}/>
                    <Weather weatherState={this.props.isActive}/>
+                   <News />
                 </ReactCSSTransitionGroup>
             </div>
             <div className={this.props.isActive ? 'widgetsActive' : 'widgetsStandby'}>

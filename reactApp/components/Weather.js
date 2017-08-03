@@ -21,7 +21,7 @@ class Weather extends React.Component {
           current: (resp.data.main.temp-273.15).toFixed(0),
           icon: resp.data.weather[0].icon
         });
-        console.log(this.state.icon);
+        // console.log(this.state.icon);
       });
     }, 1000)
     });
