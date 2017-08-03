@@ -26,7 +26,6 @@ class News extends React.Component {
       })
       .catch(console.log);
 
-
       // this.pinArticle("Trump 'pressed Mexico");
   }
 
