@@ -11,7 +11,7 @@ import Progress from './radio/progress.component';
 import Search from './radio/search.component';
 import Footer from './radio/footer.component';
 
-class AppContainer extends React.Component {
+class Radio extends React.Component {
 
   constructor(props) {
      super(props);
@@ -168,4 +168,4 @@ class AppContainer extends React.Component {
   }
 }
 
-export default AppContainer
+export default Radio
