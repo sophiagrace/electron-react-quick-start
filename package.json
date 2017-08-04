@@ -35,6 +35,7 @@
     "webpack-dev-server": "^2.6.0"
   },
   "dependencies": {
+    "@google-cloud/speech": "^0.10.2",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "boron": "^0.2.3",
@@ -52,6 +53,7 @@
     "moment": "^2.18.1",
     "mongoose": "^4.11.4",
     "morgan": "^1.8.2",
+    "node-record-lpcm16": "^0.3.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",

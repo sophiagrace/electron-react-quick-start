@@ -1,14 +1,18 @@
 import React from 'react';
 import axios from 'axios';
 
+<<<<<<< HEAD
 const NEWS_API_KEY = 'f6c882d2ff2c4c949ffc69ba6d5c0dac';
 
+=======
+>>>>>>> speech
 class News extends React.Component {
 
   constructor (props) {
     super(props);
     this.state = {
       allSources: [],
+<<<<<<< HEAD
       currentSource: {},
       currentArticles: [],
       image: ''
@@ -85,6 +89,24 @@ class News extends React.Component {
         </ol>
       </div>
     );
+=======
+      currentSourceID: '',
+      currentHeadlines: []
+    };
+
+    axios.get('https://newsapi.org/v1/sources?language=en')
+      .then((resp) => {
+        console.log('DATA:',resp.data.sources);
+      });
+  }
+
+  render () {
+    return (
+      <div id="newsContainer">
+        <h3 style={{color: 'white'}}>THIS IS NEWS</h3>
+      </div>
+    )
+>>>>>>> speech
   }
 }
 
