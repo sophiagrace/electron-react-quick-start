@@ -1,18 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 
-<<<<<<< HEAD
 const NEWS_API_KEY = 'f6c882d2ff2c4c949ffc69ba6d5c0dac';
 
-=======
->>>>>>> speech
 class News extends React.Component {
 
   constructor (props) {
     super(props);
     this.state = {
       allSources: [],
-<<<<<<< HEAD
       currentSource: {},
       currentArticles: [],
       image: ''
@@ -26,7 +22,7 @@ class News extends React.Component {
         this.setState({allSources: newSources});
       })
       .then(() => {
-        console.log('here', this.state.allSources)
+        console.log('here', this.state.allSources);
         this.selectSource('BBC News');
       })
       .catch(console.log);
@@ -41,7 +37,7 @@ class News extends React.Component {
       if (source.name.toLowerCase().startsWith(sourceName.toLowerCase())) {
         this.setState({currentSource: source});
         console.log('current source', this.state.currentSource
-    )
+        );
       }
     });
 
@@ -50,7 +46,7 @@ class News extends React.Component {
         console.log('RESP', resp);
 
         this.setState({currentArticles: [...resp.data.articles]});
-        this.setState({image: resp.data.articles[0].urlToImage})
+        this.setState({image: resp.data.articles[0].urlToImage});
         console.log('IMAGE HERE', this.state.image);
       })
       .catch(console.log);
@@ -62,20 +58,20 @@ class News extends React.Component {
       if (article.title.toLowerCase().startsWith(articleTitle.toLowerCase())) {
         // send twilio message with this article link
         const linkToSend = article.url;
-        console.log('LINK', linkToSend)
+        console.log('LINK', linkToSend);
       }
-    })
+    });
   }
 
   render () {
-      const newsStyle = {
-        width: '100%',
-        height: '33%',
-        backgroundImage: `linear-gradient(
+    const newsStyle = {
+      width: '100%',
+      height: '33%',
+      backgroundImage: `linear-gradient(
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0)
     ),   url({this.state.image})`
-      }
+    };
     // loop through articles for current source and list out article heaadlines
     return (
       <div className="newsContainer" style={newsStyle}>
@@ -83,30 +79,14 @@ class News extends React.Component {
           {this.state.currentArticles.map((article, i) => {
             // SET 4 TO BE HOW EVER MANY ARTICLES YOU WANT TO SHOW
             if(i < 4) {
-              return (<li className="newsListItem" key={i}>{article.title}</li>)
+              return (<li className="newsListItem" key={i}>{article.title}</li>);
             }
-          })}
+            return null;
+          })
+        }
         </ol>
       </div>
     );
-=======
-      currentSourceID: '',
-      currentHeadlines: []
-    };
-
-    axios.get('https://newsapi.org/v1/sources?language=en')
-      .then((resp) => {
-        console.log('DATA:',resp.data.sources);
-      });
-  }
-
-  render () {
-    return (
-      <div id="newsContainer">
-        <h3 style={{color: 'white'}}>THIS IS NEWS</h3>
-      </div>
-    )
->>>>>>> speech
   }
 }
 

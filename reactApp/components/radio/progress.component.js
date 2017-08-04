@@ -14,9 +14,9 @@ class Progress extends React.Component {
            max="1"></progress>
          <span className="player__time-total">{this.props.total}</span>
       </div>
-    )
+    );
   }
 
 }
 
-export default Progress
+export default Progress;

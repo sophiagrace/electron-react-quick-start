@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../styles/styles';
 import '../styles/container.scss';
 
 class Time extends React.Component {
@@ -26,7 +25,7 @@ class Time extends React.Component {
         seconds: seconds
       });
     }, 100)
-    })
+    });
   }
   componentWillUnmount() {
     clearInterval(this.state.interval);

@@ -22,13 +22,13 @@ class Search extends React.Component{
         key={item.id}
         id={item.id}
       >{item.title}</div>
-    )
+    );
   }
   render() {
     return (
       <div className="search">
         <Autocomplete
-        placeholder='Search for a track'    
+        placeholder='Search for a track'
          ref="autocomplete"
          inputProps={{title: "Title"}}
          value={this.props.autoCompleteValue}
@@ -43,4 +43,4 @@ class Search extends React.Component{
   }
 }
 
-export default Search
+export default Search;

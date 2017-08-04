@@ -8,8 +8,8 @@ class Player extends React.Component {
 
   render(){
     const playPauseClass = ClassNames({
-      'fa fa-play': this.props.playStatus == 'PLAYING' ? false : true,
-      'fa fa-pause': this.props.playStatus == 'PLAYING' ? true : false
+      'fa fa-play': this.props.playStatus === 'PLAYING' ? false : true,
+      'fa fa-pause': this.props.playStatus === 'PLAYING' ? true : false
     });
     return(
       <div className="player">
@@ -24,9 +24,9 @@ class Player extends React.Component {
           <button onClick={this.props.forward}><i className="fa fa-forward"></i></button>
         </div>
       </div>
-    )
+    );
   }
 
 }
 
-export default Player
+export default Player;

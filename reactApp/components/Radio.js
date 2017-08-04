@@ -9,35 +9,35 @@ import Details from './radio/details.component';
 import Player from './radio/player.component';
 import Progress from './radio/progress.component';
 import Search from './radio/search.component';
-import Footer from './radio/footer.component';
 
 class Radio extends React.Component {
 
   constructor(props) {
-     super(props);
-     this.client_id = '2f98992c40b8edf17423d93bda2e04ab';
-     this.state = {
-       track: {stream_url: '', title: '', artwork_url: ''},
-       tracks: [],
-       playStatus: Sound.status.STOPPED,
-       elapsed: '00:00',
-       total: '00:00',
-       position: 0,
-       playFromPosition: 0,
-       autoCompleteValue: ''
-     };
-   }
+    super(props);
+    this.client_id = '2f98992c40b8edf17423d93bda2e04ab';
+    this.state = {
+      track: {stream_url: '', title: '', artwork_url: ''},
+      tracks: [],
+      playStatus: Sound.status.STOPPED,
+      elapsed: '00:00',
+      total: '00:00',
+      position: 0,
+      playFromPosition: 0,
+      autoCompleteValue: ''
+    };
+  }
 
- componentDidMount() {
+  componentDidMount() {
     this.randomTrack();
   }
 
   prepareUrl(url) {
     //Attach client id to stream url
-    return `${url}?client_id=${this.client_id}`
+    return `${url}?client_id=${this.client_id}`;
   }
 
   xlArtwork(url){
+    console.log('URL', url);
     return url.replace(/large/, 't500x500');
   }
 
@@ -45,16 +45,16 @@ class Radio extends React.Component {
     // Check current playing state
     if(this.state.playStatus === Sound.status.PLAYING){
       // Pause if playing
-      this.setState({playStatus: Sound.status.PAUSED})
+      this.setState({playStatus: Sound.status.PAUSED});
     } else {
       // Resume if paused
-      this.setState({playStatus: Sound.status.PLAYING})
+      this.setState({playStatus: Sound.status.PLAYING});
     }
   }
 
   stop(){
     // Stop sound
-   this.setState({playStatus: Sound.status.STOPPED});
+    this.setState({playStatus: Sound.status.STOPPED});
   }
 
   forward(){
@@ -86,26 +86,29 @@ class Radio extends React.Component {
 
 
   formatMilliseconds(milliseconds) {
-     var hours = Math.floor(milliseconds / 3600000);
-     milliseconds = milliseconds % 3600000;
-     var minutes = Math.floor(milliseconds / 60000);
-     milliseconds = milliseconds % 60000;
-     var seconds = Math.floor(milliseconds / 1000);
-     milliseconds = Math.floor(milliseconds % 1000);
+    // uncomment the following line if we decide we want hours
+    // var hours = Math.floor(milliseconds / 3600000);
+    milliseconds = milliseconds % 3600000;
+    var minutes = Math.floor(milliseconds / 60000);
+    milliseconds = milliseconds % 60000;
+    var seconds = Math.floor(milliseconds / 1000);
+    milliseconds = Math.floor(milliseconds % 1000);
 
-     return (minutes < 10 ? '0' : '') + minutes + ':' +
+    return (minutes < 10 ? '0' : '') + minutes + ':' +
         (seconds < 10 ? '0' : '') + seconds;
   }
 
   handleSongPlaying(audio){
-     this.setState({  elapsed: this.formatMilliseconds(audio.position),
-                      total: this.formatMilliseconds(audio.duration),
-                      position: audio.position / audio.duration })
-   }
+    this.setState({
+      elapsed: this.formatMilliseconds(audio.position),
+      total: this.formatMilliseconds(audio.duration),
+      position: audio.position / audio.duration
+    });
+  }
 
   handleSongFinished () {
     this.randomTrack();
-   }
+  }
 
   randomTrack () {
     let _this = this;
@@ -123,7 +126,7 @@ class Radio extends React.Component {
         //If something goes wrong, let us know
         console.log(err);
       });
-   }
+  }
 
   render () {
     const scotchStyle = {
@@ -133,7 +136,7 @@ class Radio extends React.Component {
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0)
     ),   url(${this.xlArtwork(this.state.track.artwork_url)})`
-    }
+    };
     return (
       <div className="scotch_music" style={scotchStyle}>
         <Search
@@ -168,4 +171,4 @@ class Radio extends React.Component {
   }
 }
 
-export default Radio
+export default Radio;
