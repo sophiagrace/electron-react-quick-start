@@ -1,5 +1,4 @@
-const webpack = require('webpack');
-
+// const webpack = require('webpack');
 module.exports = {
   entry: './reactApp/app.js',
   output: {
