@@ -10,7 +10,8 @@ class News extends React.Component {
     this.state = {
       allSources: [],
       currentSource: {},
-      currentArticles: []
+      currentArticles: [],
+      image: ''
     };
   }
 
@@ -21,8 +22,8 @@ class News extends React.Component {
         this.setState({allSources: newSources});
       })
       .then(() => {
-        console.log('here')
-        this.selectSource('ABC News');
+        console.log('here', this.state.allSources)
+        this.selectSource('BBC News');
       })
       .catch(console.log);
 
@@ -35,14 +36,18 @@ class News extends React.Component {
     this.state.allSources.map(source => {
       if (source.name.toLowerCase().startsWith(sourceName.toLowerCase())) {
         this.setState({currentSource: source});
-        console.log('current source', this.state.currentSource)
+        console.log('current source', this.state.currentSource
+    )
       }
     });
 
     return axios.get(`https://newsapi.org/v1/articles?source=${this.state.currentSource.id}&apiKey=${NEWS_API_KEY}`)
       .then(resp => {
         console.log('RESP', resp);
+
         this.setState({currentArticles: [...resp.data.articles]});
+        this.setState({image: resp.data.articles[0].urlToImage})
+        console.log('IMAGE HERE', this.state.image);
       })
       .catch(console.log);
   }
@@ -59,14 +64,22 @@ class News extends React.Component {
   }
 
   render () {
+      const newsStyle = {
+        width: '100%',
+        height: '33%',
+        backgroundImage: `linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0)
+    ),   url({this.state.image})`
+      }
     // loop through articles for current source and list out article heaadlines
     return (
-      <div id="newsContainer">
-        <ol style={{color: 'white'}}>
+      <div className="newsContainer" style={newsStyle}>
+        <ol className="newsList" style={{color: 'white'}}>
           {this.state.currentArticles.map((article, i) => {
             // SET 4 TO BE HOW EVER MANY ARTICLES YOU WANT TO SHOW
             if(i < 4) {
-              return (<li key={i}>{article.title}</li>)
+              return (<li className="newsListItem" key={i}>{article.title}</li>)
             }
           })}
         </ol>

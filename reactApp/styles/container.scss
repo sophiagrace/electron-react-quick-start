@@ -99,6 +99,22 @@
     flex-direction: column;
     margin-left: 35%;
 }
+.newsContainer {
+    // background: linear-gradient(to bottom, rgba(27, 28, 27, 0.2), rgba(27, 28, 27,0.7));
+    width: 100%;
+}
+.newsList {
+    margin: 0;
+    padding: 5%;
+    // padding-right: 7%;
+}
+.newsListItem {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    padding-top: 2%;
+    padding-left: 0.1%
+}
 .timeDiv {
     display: flex;
     justify-content: center;

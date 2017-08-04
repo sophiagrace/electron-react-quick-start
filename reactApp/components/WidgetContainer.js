@@ -34,11 +34,11 @@ import News from './News';
 
                    <Time timeState={this.props.isActive}/>
                    <Weather weatherState={this.props.isActive}/>
-                   <News />
                 </ReactCSSTransitionGroup>
             </div>
             <div className={this.props.isActive ? 'widgetsActive' : 'widgetsStandby'}>
                 <Radio />
+                <News />    
             </div>
       </div>
      )
